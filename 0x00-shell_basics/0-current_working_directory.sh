@@ -1,2 +1,2 @@
 #!/bin/bash
- "$(pwd)"
+find "$(cd ..; pwd)" -name "filename"
