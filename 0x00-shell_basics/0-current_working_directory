@@ -1,2 +1,2 @@
 #!/bin/bash
-echo  "$(pwd)"
+mkdir /tmp/my_first_directory
