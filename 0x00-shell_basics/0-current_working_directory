@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "$( pwd -P)/$(basename "$1")"
+echo "$(cd "$(dirname "$1")")/$(basename "$1")"
