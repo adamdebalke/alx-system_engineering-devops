@@ -1,2 +1,2 @@
 #!/bin/bash
-find "$(cd ..; pwd)" -name "filename"
+find "$(cd ../ pwd)" -name "filename"
