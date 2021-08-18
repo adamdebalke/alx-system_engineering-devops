@@ -1,2 +1,2 @@
 #!/bin/bash
-find "$(cd ../ pwd)" -name "filename"
+$(dirname "0")
