@@ -1,0 +1,2 @@
+#Shell, init files, variables and expansions
+This project builds upon previous knowledge with the introduction of Expansions, Shell Arithmetic, Variables, Shell initialization files and The alias Command.
