@@ -5,6 +5,6 @@ i=10
 
 while [ $i -gt 0 ]
 do
-    echo "Holberton School"
+    echo "Best School"
     i=$((i - 1))
 done
