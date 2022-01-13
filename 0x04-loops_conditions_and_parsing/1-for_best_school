@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
-# This script uses a for loop 10 times
+# While loop displays 10 times
 
-for (( i = 0; i <= 10; i++))
+COUNTER=0
+while [ $COUNTER -lt 10 ]
 do
-     echo "Best School"
+    echo "Best School"
+    let COUNTER=COUNTER+1
 done

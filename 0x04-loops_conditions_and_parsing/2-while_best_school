@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# uses while loop to print 10 times
+
+i=10
+
+while [ $i -gt 0 ]
+do
+    echo "Holberton School"
+    i=$((i - 1))
+done
