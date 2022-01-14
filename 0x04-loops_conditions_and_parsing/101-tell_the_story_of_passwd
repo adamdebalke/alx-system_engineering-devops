@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# This script reads in /etc/passwd and displays the username, group id, and home directory path for the user
+filename="/etc/passwd"
+while IFS=':' read -r -a line
+do
+	# USERNAME -f1
+	username="${line[0]}"
+	# GROUP_ID -f4
+	grpid="${line[3]}"
+	# HOME_DIRECTORY -f6
+	home="${line[5]}"
+	# COMMAND/SHELL -f7
+	cshell="${line[6]}"
+	# USER ID -f3
+	uid="${line[2]}"
+	# PASSWORD -f2
+	pw="${line[1]}"
+	# USER ID INFO -f5
+	info="${line[4]}"
+	echo "The user $username is part of the $grpid gang, lives in $home and rides $cshell. $uid's place is protected by the passcode $pw, more info about the user here: $info"
+done < "$filename"
