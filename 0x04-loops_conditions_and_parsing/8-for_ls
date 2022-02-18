@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script displays the content of the current directory in list format with only the part after the dash displayed
+LIST="$(ls)"
+for i in $LIST
+do
+	echo "$i" | cut -d'-' -f2
+done

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script reads in /etc/passwd and displays the username, group id, and home directory path for the user
+filename="/etc/passwd"
+while IFS=':' read -r -a line
+do
+	echo "${line[0]}:${line[3]}:${line[5]}"
+done < "$filename"

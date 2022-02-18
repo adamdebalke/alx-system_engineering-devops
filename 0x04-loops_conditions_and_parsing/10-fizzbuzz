@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# This script displays numbers from 1 to 100, replacing multiples of 3 with Fizz, 5 with Buzz, both with FizzBuzz
+
+for i in {1..100}
+do
+	three=$((i%3))
+	five=$((i%5))
+	if [ $three -eq 0 ]
+	then
+		echo -n "Fizz"
+	fi
+	if [ $five -eq 0 ]
+	then
+		echo -n "Buzz"
+	fi
+	if [ $three -ne 0 -a $five -ne 0 ]
+	then
+		echo -n $i
+	fi
+	echo ""
+done
