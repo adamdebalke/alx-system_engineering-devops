@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
-# configures an Nginx server so that /redirect_me is redirecting to another page
-
+# Configures a Nginx server so that /redirect_me is redirecting to another page
 apt-get -y update
 apt-get -y install nginx
-ufw allow 'Nginx HTTP'
-echo 'Holberton School' > /var/www/html/index.nginx-debian.html
-sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
-service nginx start
+
+echo 'Hello World!' > /usr/share/nginx/html/index.html
+
+# stream editor. -i: to update the file
+sudo sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+
+sudo service nginx restart
