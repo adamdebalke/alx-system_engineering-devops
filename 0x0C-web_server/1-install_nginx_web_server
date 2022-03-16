@@ -4,5 +4,5 @@
 apt-get -y update
 apt-get -y install nginx
 ufw allow 'Nginx HTTP'
-echo 'Hello World!' > /var/log/
+echo hello world > /tmp/test
 service nginx start
