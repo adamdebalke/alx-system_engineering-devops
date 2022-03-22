@@ -1,21 +1,14 @@
 #!/usr/bin/env bash
-# Install and configure HAproxy on the lb-01 server
-apt-get -y update
-
-apt-get -y install software-properties-common
-add-apt-repository -y ppa:vbernat/haproxy-1.8
-
-apt-get -y update
-apt-get -y install haproxy=1.8.\*
-echo "
-frontend load_balancer
-        bind *:80
-        mode http
-        default_backend servers
-backend servers
-        mode http
-        balance roundrobin
-        server web-01 44.197.228.140:80 check
-        server web-02 3.227.235.17:80 check" >> /etc/haproxy/haproxy.cfg
-        
-sudo service haproxy start
+# shellcheck disable=SC2016
+# s
+# configures ubuntu serveur with custom header
+sudo apt-get -y update
+sudo apt-get -y upgrade
+sudo apt-get -y install nginx
+sudo chown -R "$USER":"$USER" /var/www/
+sudo chown -R "$USER":"$USER" /etc/nginx
+echo "Hello World" > /var/www/html/index.nginx-debian.html
+line="\\\trewrite ^/redirect_me https://www.youtube.com/watch?v=dQw4w9WgXcQ permanent;"
+sudo sed -i "26i $line" /etc/nginx/sites-available/default
+sed -i '/listen 80 default_server;/a add_header X-Served-By $hostname;' /etc/nginx/sites-available/default
+sudo service nginx restart
